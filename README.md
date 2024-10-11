@@ -1,1 +1,1 @@
-This is a basic page
+> domain provided by https://freedomain.one
