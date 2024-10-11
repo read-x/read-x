@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rust Learning Resources</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500&display=swap');
+
+        body {
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #f5f5f7;
+            color: #1d1d1f;
+            line-height: 1.5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 90%;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 18px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(20px);
+            padding: 40px;
+            transition: all 0.3s ease;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 500;
+            margin-bottom: 30px;
+            text-align: center;
+            background: linear-gradient(45deg, #DEA584, #B7410E);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            display: block;
+            font-size: 18px;
+            padding: 15px 20px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: #1d1d1f;
+        }
+
+        a:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            a {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Rust Learning Resources</h1>
+        <ul id="list">
+            <!-- List items will be inserted here -->
+        </ul>
+    </div>
+
+    <script>
+        // Your list items with links
+        const items = [
+            { text: "Effective Rust", url: "https://effective-rust.czyt.tech" },
+            { text: "Rust Atomics and Locks", url: "https://atomics.czyt.tech" },
+            { text: "Rust for Rustaceans", url: "https://rust-for-rustaceans.czyt.tech" },
+            { text: "Comprehensive Rust", url: "https://comprehensive-rust.czyt.tech" },
+            { text: "用Rust实现Lua解释器", url: "https://build-lua-with-rust.czyt.tech" }
+        ];
+
+        const list = document.getElementById('list');
+
+        // Populate the list
+        items.forEach(item => {
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = item.url;
+            a.textContent = item.text;
+            a.target = "_blank"; // Open links in new tab
+            li.appendChild(a);
+            list.appendChild(li);
+        });
+
+        // Add click animation
+        list.addEventListener('click', function(e) {
+            if (e.target.tagName === 'A') {
+                e.target.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    e.target.style.transform = '';
+                }, 200);
+            }
+        });
+    </script>
+</body>
+</html>
