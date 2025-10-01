@@ -1,1 +1,1 @@
-> domain provided by https://freedomain.one
+> domain provided by https://dash.domain.digitalplat.org/
